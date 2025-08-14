@@ -7,303 +7,405 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Green Impact is an NGO working in sector of forest conservation and enviromental issues."
+      content="Green Impact is an NGO working in sector of forest conservation and environmental issues."
     />
     <title>Green Impact Nepal</title>
+    <script>
+      // Add intersection observer for animations
+      document.addEventListener('DOMContentLoaded', function() {
+        const observerOptions = {
+          threshold: 0.1,
+          rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animate-fade-in');
+            }
+          });
+        }, observerOptions);
+
+        // Observe all cards and sections
+        document.querySelectorAll('.observe-animation').forEach(el => {
+          observer.observe(el);
+        });
+      });
+    </script>
   </head>
-  <body>
-    <div class="w-full sticky top-0 bg-white shadow-lg">
-      <nav class="flex justify-between items-center mt-2 container mx-auto">
-        <img src="logo.png" alt="logo" class="h-24 py-2" />
+  <body class="bg-gray-50">
+    <!-- Navigation -->
+    <div class="w-full sticky top-0 bg-white/95 backdrop-blur-md shadow-lg z-50 transition-all duration-300">
+      <nav class="flex justify-between items-center py-4 container mx-auto px-6">
+        <img src="logo.png" alt="logo" class="h-16 transition-transform hover:scale-105" />
         <div class="flex gap-8 flex-wrap">
-          <a href="#home" class="text-2xl">Home</a>
-          <a href="#about" class="text-2xl">About</a>
-          <a href="#works" class="text-2xl">Our works</a>
-          <a href="#contact" class="text-2xl">Contact</a>
+          <a href="#home" class="text-lg font-medium text-gray-700 hover:text-green-600 transition-colors duration-300">Home</a>
+          <a href="#about" class="text-lg font-medium text-gray-700 hover:text-green-600 transition-colors duration-300">About</a>
+          <a href="#works" class="text-lg font-medium text-gray-700 hover:text-green-600 transition-colors duration-300">Our Works</a>
+          <a href="#contact" class="text-lg font-medium text-gray-700 hover:text-green-600 transition-colors duration-300">Contact</a>
         </div>
       </nav>
     </div>
-    <section id="home" class="bg-gradient-to-r from-green-600 to-blue-100">
-      <div class="container grid grid-cols-1 md:grid-cols-2 mx-auto p-14 gap-4">
-        <div class="flex-col flex gap-4">
-          <h1 class="text-4xl text-white font-bold">Green Impact Nepal</h1>
-          <p class="text-xl text-white text-justify">
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen bg-gradient-to-br from-green-600 via-green-500 to-emerald-400 relative overflow-hidden">
+      <div class="absolute inset-0 bg-black/10"></div>
+      <div class="container grid grid-cols-1 lg:grid-cols-2 mx-auto px-6 py-20 items-center min-h-screen relative z-10">
+        <div class="flex-col flex gap-8 animate-slide-up">
+          <h1 class="text-5xl lg:text-6xl text-white font-bold leading-tight">
+            Green Impact 
+            <span class="block text-emerald-200">Nepal</span>
+          </h1>
+          <p class="text-xl text-white/90 text-justify leading-relaxed">
             We are an organization dedicated to addressing critical thematic
             areas related to forests, the environment, and climate change. Our
             mission includes creating awareness and campaigning to educate
-            people about pressing issues in these fields. We actively implement
-            activities to translate theoretical knowledge into practical
-            solutions. Additionally, we emphasize preparedness for disasters and
-            proactively address emerging challenges in conservation and
-            management within these thematic areas. Through our efforts, we aim
-            to foster sustainable practices and resilient communities.
+            people about pressing issues in these fields.
           </p>
           <a
             href="#about"
-            class="text-2xl px-8 py-4 bg-green-600 rounded-md shadow-md text-white font-bold w-fit"
+            class="text-lg px-8 py-4 bg-white text-green-600 rounded-lg shadow-lg font-bold w-fit hover:bg-green-50 hover:shadow-xl transition-all duration-300 transform hover:scale-105"
           >
-            Know More
+            Discover Our Mission
           </a>
         </div>
-        <img src="assets/gin_cover.jpg" alt="forest" class="h-96 rounded-md" />
-      </div>
-    </section>
-    <section id="about" class="mx-auto p-14">
-      <h1 class="text-4xl font-bold mb-4">About Us</h1>
-      <div class="container grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div class="text-justify">
-          <h2 class="text-2xl font-bold">Vision</h2>
-          A vibrant Nepal where biodiversity thrives, communities are empowered
-          with sustainable practices, and environmental health is prioritized.
+        <div class="flex justify-center lg:justify-end animate-float">
+          <img src="assets/gin_cover.jpg" alt="forest" class="w-full max-w-lg rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-500" />
         </div>
-        <div class="text-justify">
-          <h2 class="text-2xl font-bold">Mission</h2>
-          To advance environmental stewardship through conservation initiatives,
-          educational programs, and community engagement, ensuring a sustainable
-          and healthy environment for future generations.
+      </div>
+      <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce-gentle">
+        <div class="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
+          <div class="w-1 h-3 bg-white/70 rounded-full mt-2"></div>
         </div>
       </div>
     </section>
-    <section id="works" class="min-h-screen"></section>
-    <section
-      id="works"
-      class="min-h-screen bg-gradient-to-r from-cyan-600 to-blue-500 text-white"
-    >
-      <div class="container mx-auto p-14 flex flex-col gap-4">
-        <h1 class="text-4xl font-bold">Our Works</h1>
 
-        <h2 class="text-2xl font-bold">Ongoing</h2>
-        <div class="grid md:grid-cols-2 grid-cols-1 gap-4">
-          <div>
-            <div class="grid md:grid-cols-2 grid-cols-1 gap-4">
-              <!-- <img src="assets/rbasics1.png" alt="1" class="h-48" />
-            <img src="assets/rbasics2.jpg" alt="2" class="h-48" /> -->
+    <!-- About Section -->
+    <section id="about" class="py-20 px-6 observe-animation">
+      <div class="container mx-auto">
+        <h1 class="text-4xl lg:text-5xl font-bold mb-16 text-center text-gray-800">About Us</h1>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div class="bg-white rounded-2xl p-8 shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-2">
+            <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
+              <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+              </svg>
             </div>
-            <h2 class="text-center font-bold text-lg mb-4">
-              Influence of Urbanization on Forest Fragmentation and Wildlife
-              Habitats in Madhesh Province, Nepal
-            </h2>
-            <button
-              onclick="openModal([`Green Impact Nepal (GIN) is currently conducting a research project to assess the impact of urbanization on forest fragmentation and wildlife habitat in Madhesh Province. As urban expansion accelerates, natural ecosystems are increasingly threatened, leading to habitat loss, disrupted migration corridors, and reduced biodiversity. This study aims to explore the patterns of urban growth, its direct and indirect impacts on forests, and the ecological consequences that follow.`,`Madhesh Province, known for its rich biodiversity, including Sal (Shorea robusta) forests, migratory birds, and endangered species like the Ganges River dolphin, wild buffalo, and Barasingha, faces severe environmental challenges due to unplanned urbanization, land degradation, and climate-induced disasters such as flooding and waterlogging. Through spatial analysis and ecological assessments, this research will quantify forest fragmentation patterns over time, addressing an existing knowledge gap.`])"
-              class="text-xl px-4 py-2 bg-green-600 rounded-md shadow-md text-white font-bold flex w-fit"
-            >
-              Know More
-            </button>
+            <h2 class="text-2xl font-bold mb-4 text-gray-800">Vision</h2>
+            <p class="text-gray-600 leading-relaxed">
+              A vibrant Nepal where biodiversity thrives, communities are empowered
+              with sustainable practices, and environmental health is prioritized.
+            </p>
           </div>
-          <div>
-            <div class="grid md:grid-cols-2 grid-cols-1 gap-4">
-              <img src="assets/elephant1.png" alt="1" class="h-48" />
-              <img src="assets/elephant2.png" alt="2" class="h-48" />
+          <div class="bg-white rounded-2xl p-8 shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-2">
+            <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+              <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
             </div>
-            <h2 class="text-center font-bold text-lg mb-4">
-              Education Outreach Program on Human-Elephant Conflict
-            </h2>
-            <button
-              onclick="openModal([`Green Impact Nepal (GIN), in collaboration with Damak Municipality and Kamal Rural Municipality, is implementing an Education Outreach Program to raise awareness about Human-Elephant Conflict (HEC) and promote coexistence with wildlife. These regions are among the most affected by HEC, where human settlements and elephant habitats frequently overlap, leading to conflicts that pose risks to both human communities and wildlife. Understanding the causes and impacts of these conflicts is crucial in developing effective strategies for peaceful coexistence.`,`Through interactive sessions with students and teachers, our team is educating communities on the root causes of HEC, its consequences on both humans and elephants, and practical mitigation measures. We emphasize sustainable solutions such as early warning systems, habitat conservation, and community-driven initiatives to ensure safety while protecting biodiversity. By fostering awareness and equipping local communities with knowledge, we aim to reduce conflicts and build a harmonious relationship between humans and wildlife. We extend our gratitude to Damak Municipality, Kamal Rural Municipality, and all participants for their active engagement in this initiative`])"
-              class="text-xl px-4 py-2 bg-green-600 rounded-md shadow-md text-white font-bold flex w-fit"
-            >
-              Know More
-            </button>
-          </div>
-        </div>
-
-        <h2 class="text-2xl font-bold">Completed</h2>
-        <div class="grid md:grid-cols-2 grid-cols-1 gap-4">
-          <div>
-            <div class="grid md:grid-cols-2 grid-cols-1 gap-4">
-              <img src="assets/rbasics1.png" alt="1" class="h-48" />
-              <img src="assets/rbasics2.jpg" alt="2" class="h-48" />
-            </div>
-            <h2 class="text-center font-bold text-lg mb-4">
-              R- basics Training
-            </h2>
-            <button
-              onclick="openModal([`Green Impact Nepal organized a week-long training program on R-Basics from 4th-9th August, 2024. The resource person for the training was Mr Prakash Lamichhane, research officer at Climate Change Management Division.The training both held physically at Green Impact Nepal's office in Buddhanagar, and virtually was designed to provide basic R programming skills from installation to some data analysis techniques.`,`The training started with the chairperson welcoming all the participants and briefing about the syllabus of the training. A total of 10 participants were present in the training. The training began with an introduction to R and RStudio, where participants learned to install the software and navigate its interface. After that, the training moved on to the first logical entry point in programming: learning about basic syntax, variables, and operators with R. In the following days participants got to learn about the different data types, including vectors, lists, matrices, and data frames, and practiced manipulating data sets using built-in R functions. The training also involved reading and writing files in different formats, which is an essential ability for data analysis. Each day included hands-on exercises, ensuring that participants could apply what they learned immediately.`,`The training concluded with a vote of thanks from the Chairperson of Green Impact Nepal, expressing gratitude to the participants, the trainer, and everyone involved in making the program a success.`])"
-              class="text-xl px-4 py-2 bg-green-600 rounded-md shadow-md text-white font-bold flex w-fit"
-            >
-              Know More
-            </button>
-          </div>
-          <div>
-            <div class="grid md:grid-cols-2 grid-cols-1 gap-4">
-              <img src="assets/drrtalk1.png" alt="1" class="h-48" />
-              <img src="assets/drrtalk2.png" alt="2" class="h-48" />
-            </div>
-            <h2 class="text-center font-bold text-lg mb-4">
-              Talk program on Disaster Risk Reduction
-            </h2>
-            <button
-              onclick="openModal([`Green Impact Nepal (GIN) successfully organized a virtual talk program on 'Geo-hazard Scenario and Geo-Disaster Risk Reduction in Nepal' on Friday 19 July, 2024. The key speaker for the session was Dr. Subodh Dhakal, an Associate Professor and Head of the Department at Tri-Chandra Multiple Campus, Tribhuvan University. During the session, Dr. Dhakal presented an in-depth analysis of the various geo-hazards prevalent in Nepal, including landslides, earthquakes, and floods. He emphasized the critical need for a comprehensive understanding of the geological and climatic factors contributing to these disasters. The presentation also focused on the vulnerability of different regions in Nepal and the potential impact of geo-hazards on local communities.`,`Dr. Dhakal provided an overview of some initiatives and strategies in place now working to address the risks from geo-hazards in Nepal These actions consist of early warning systems, community-based disaster risk reduction care and geo-hazard mapping for urban planning and development. He underlined the necessity for interdisciplinary working among geologists, engineers and those with experience in urban planning, alongside local governance to significantly decrease geo-disaster risks.`,`After the presentation by Dr Dhakal, the discussion session started where the participants were engaged in lively discussion where Dr. Dhakal addressed numerous questions regarding the challenges and opportunities in geo-disaster risk management in Nepal. The session ended with the vote of thanks from Green Impact Nepal to the key speaker as well as all the participants.`])"
-              class="text-xl px-4 py-2 bg-green-600 rounded-md shadow-md text-white font-bold flex w-fit"
-            >
-              Know More
-            </button>
-          </div>
-          <div>
-            <div class="grid md:grid-cols-2 grid-cols-1 gap-4">
-              <img src="assets/forestFire1.png" alt="1" class="h-48" />
-              <img src="assets/forestFire2.png" alt="2" class="h-48" />
-            </div>
-            <h2 class="text-center font-bold text-lg mb-4">
-              Talk program on Forest Fire
-            </h2>
-            <button
-              onclick="openModal([`Green Impact Nepal (GIN), in collaboration with the Himalayan Conservation Group (HICOG), organized a virtual talk program titled “Current Issues of Forest Fire in Nepal” on May 9, 2024. The aim of the program was to facilitate the exchange of information and share efforts made by professionals in the forest, including- Division Forest Offices and the Nepal Foresters’ Association (NFA). During the session, the key speakers highlighted the challenges faced by forest fires along with the mitigation and adaptive measures undertaken by the forest professionals. 6 speakers from different forest organizations and GIN representatives were invited as key speakers for the event, which was hosted by Garima Sharma. Over 100 enthusiastic participants from different universities, governments, and non-government organizations attended the 1.5-hour program through the online platform Zoom and other interested participants through Facebook Live. `,`The presentation on forest fire management in Nepal highlighted the importance of understanding the complex interplay of factors influencing forest fires, including topography, fuel, and climate. The speakers emphasized the need for effective fire management and conservation efforts in forest ecosystems. They shared their experiences and strategies for combating forest fires, including the use of drones and community engagement. The Divisional Forest Office, Marin, Sindhuli, has successfully integrated technology into their fire management, while the District Forest Officer, Dhading, stressed the need for strict laws and multi-level government involvement. The General Secretary of NFA  emphasized the role of combined efforts from forest professionals, community users, and local government in mitigating forest fires.`,`The speakers shared that the rate of forest fires is increasing. The problem of forest fires and a lack of preparedness and collaboration with different levels of government are the major challenges to forest fire control. Man-made fires are usually promoted for harming wildlife that has caused damage to agricultural and settlement lands. Another reason for the massive increase in forest fires is the deposition of forest residues and debris on the forest floor, as people are less dependent on them. The experts have put forth several recommendations aimed at reducing forest fires in the upcoming years. Firstly, it is crucial for all three levels of government—local, provincial, and federal—to collectively address forest fires as a priority issue, recognizing that the responsibility cannot solely rest on Forest Divisions. Additionally, implementing strict punishments for offenders and ensuring the dissemination of such punitive measures through media channels can serve as a deterrent. Moreover, timely debris collection, fostering transboundary cooperation between local governments and forest division offices, and employing drones for effective forest patrolling, and implementing active forest management strategies are identified as key measures to mitigate the occurrence of forest fires significantly.`])"
-              class="text-xl px-4 py-2 bg-green-600 rounded-md shadow-md text-white font-bold flex w-fit"
-            >
-              Know More
-            </button>
-          </div>
-          <div>
-            <div class="grid md:grid-cols-2 grid-cols-1 gap-4">
-              <img src="assets/reels1.jpg" alt="1" class="h-48" />
-              <img src="assets/reels2.jpg" alt="2" class="h-48" />
-            </div>
-
-            <h2 class="text-center font-bold text-lg mb-4">
-              Awareness Campaign through Reels Competition
-            </h2>
-            <button
-              onclick="openModal([`On May 22, in celebration of the International Day of Biodiversity (IDB), our organization launched an awareness campaign featuring a reel competition centered around the theme 'Be part of the Plan,' the slogan for IDB 2024. This initiative specifically targeted students and professionals, inviting them to create and share informative reels that highlight the importance of biodiversity. We received a plethora of creative and educational reels through our Instagram and Facebook pages, reflecting a broad range of perspectives and insights. To encourage continued engagement and recognize outstanding contributions, we awarded prizes to two participants, evaluating their reels based on a balanced criterion of 50% popularity and 50% content quality. This dual assessment ensured that the winners were not only popular but also provided valuable information.`,`Through such awareness campaigns, especially on significant days like IDB, we aim to increase public awareness about the importance of biodiversity, foster a sense of responsibility in exploiting natural resources, and promote steps toward the conservation and sustainable management of our natural environment. These efforts are vital in educating the public and inspiring proactive measures to protect our planet's biodiversity for future generations.`])"
-              class="text-xl px-4 py-2 bg-green-600 rounded-md shadow-md text-white font-bold flex w-fit"
-            >
-              Know More
-            </button>
-          </div>
-          <div>
-            <div class="grid md:grid-cols-2 grid-cols-1 gap-4">
-              <!-- <img src="assets/hike1.png" alt="1" class="h-48" /> -->
-              <img src="assets/hike2.jpg" alt="2" class="h-48" />
-              <img src="assets/hike3.jpg" alt="3" class="h-48" />
-            </div>
-            <h2 class="text-center font-bold text-lg mb-4">Nature Hike</h2>
-            <button
-              onclick="openModal([`Green Impact Nepal (GIN), in collaboration with Land Our Future (LOF) successfully organized an eco-hike to Marble Dada as a pre-celebration of World Environment Day. The hike began with an informative briefing by a GIN team member as well as an introduction from the participants. This introduction set the way for a deeper understanding of the hike’s purpose. Mr. Sunil Manandhar, former environment minister and advisor to LOF, provided an insightful overview of Marble Dada’s history and current state. He highlighted the significant environmental degradation caused by the marble factory and emphasized the urgent need for restoration efforts. The hike included team members from the organizing institutions and participants from diverse backgrounds, including environmental science, forestry, and geomatics engineering. As the group hiked, Mr. Manandhar continuously briefed participants, pointing out the warehouse for the industry and the production site, and highlighting the significant environmental degradation caused by the marble factory.`,`Following this educational session, the group proceeded to the botanical garden in Godawari, where participants had the opportunity to enjoy lunch amidst nature. This setting fostered an engaging experience-sharing session, during which all participants shared their experiences about the hike and their views on Marble Dada. Some suggested that, from a tourism perspective, Marble Dada could flourish and be developed into a place for practical learning. These discussions emphasized the potential for eco-tourism and educational initiatives to complement restoration efforts. The event concluded with closing remarks from Mr. Sunil Manandhar, who reiterated the critical need for ongoing restoration efforts at Marble Dada. His final words served as a call to action, inspiring participants to contribute to environmental conservation and sustainability initiatives.`])"
-              class="text-xl px-4 py-2 bg-green-600 rounded-md shadow-md text-white font-bold flex w-fit"
-            >
-              Know More
-            </button>
-          </div>
-          <div>
-            <div class="grid md:grid-cols-2 grid-cols-1 gap-4">
-              <img src="assets/wed1.jpg" alt="1" class="h-48" />
-              <img src="assets/wed2.jpg" alt="2" class="h-48" />
-            </div>
-            <h2 class="text-center font-bold text-lg mb-4">
-              World Environment Day Celebration
-            </h2>
-            <button
-              onclick="openModal([`On this World Environment Day, Green Impact Nepal is thrilled to share the incredible initiatives undertaken by three schools in Nepal. At Mount SEB School in Narephat and Nexus International Academy in Pepsicola, students engaged in explorative presentations focused on this year's theme, 'Our Land, Our Future.' They participated in interactive games and dynamic discussions, which enlightened them about the importance of environmental restoration and the pivotal role their generation plays in securing a sustainable future.`,`Meanwhile, at Motherland English Boarding School in Damak, Jhapa, students embarked on an enlightening excursion to the community forest. This hands-on experience allowed them to witness the significance of biodiversity and the need for environmental conservation. The enthusiasm and commitment shown by these young minds serve as a powerful reminder that the future is in capable hands. Green Impact Nepal encourages everyone to continue inspiring and being inspired to protect our beautiful planet.`])"
-              class="text-xl px-4 py-2 bg-green-600 rounded-md shadow-md text-white font-bold flex w-fit"
-            >
-              Know More
-            </button>
-          </div>
-          <div>
-            <div class="grid md:grid-cols-2 grid-cols-1 gap-4">
-              <img src="assets/reportwriting1.png" alt="1" class="h-48" />
-              <img src="assets/reportwriting2.png" alt="2" class="h-48" />
-            </div>
-            <h2 class="text-center font-bold text-lg mb-4">
-              One day workshop on Research Report Writing
-            </h2>
-            <button
-              onclick="openModal([`Green Impact Nepal (GIN) successfully conducted a Research Report Writing Workshop at Model Campus Damak, aimed at equipping students and young researchers with essential skills to structure, analyze, and present their research effectively.`,`The session covered key aspects of academic writing, including developing a strong research framework, data interpretation techniques, referencing and citation styles, and proper formatting standards. Participants were introduced to best practices for analyzing research findings, synthesizing information, and presenting their work in a clear and impactful manner—crucial skills for those pursuing research in environmental sustainability and other fields.`,`This workshop served as a platform for interactive learning, where students actively engaged in discussions, received expert guidance, and practiced structuring their research reports with clarity and precision. The session not only enhanced their academic writing abilities but also empowered them to contribute more effectively to evidence-based environmental and scientific discussions.A big thanks to all the enthusiastic participants, faculty members, and the dedicated GIN team for making this event a success!`])"
-              class="text-xl px-4 py-2 bg-green-600 rounded-md shadow-md text-white font-bold flex w-fit"
-            >
-              Know More
-            </button>
+            <h2 class="text-2xl font-bold mb-4 text-gray-800">Mission</h2>
+            <p class="text-gray-600 leading-relaxed">
+              To advance environmental stewardship through conservation initiatives,
+              educational programs, and community engagement, ensuring a sustainable
+              and healthy environment for future generations.
+            </p>
           </div>
         </div>
       </div>
     </section>
-    <section id="contact" class="container p-14 mx-auto">
-      <h1 class="text-4xl font-bold pb-4">Contact Us</h1>
-      <div
-        class="grid grid-cols-1 md:grid-cols-2 justify-center bg-white gap-4"
-      >
-        <iframe
-          title="map"
-          src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3533.0668712827196!2d85.33197299999999!3d27.684327999999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjfCsDQxJzAzLjYiTiA4NcKwMTknNTUuMSJF!5e0!3m2!1sen!2snp!4v1721717074427!5m2!1sen!2snp"
-          width="600"
-          height="300"
-          style="border: 0"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-        ></iframe>
-        <div class="grid md:grid-cols-2 grid-cols-1 gap-6 mb-12 px-4 h-full">
-          <div class="mb-12 lg:mb-0 text-center mx-auto">
-            <svg
-              class="w-8 h-8 text-blue-600 mb-6 mx-auto"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 496 512"
-            >
-              <path
-                fill="currentColor"
-                d="M248 8C111.03 8 0 119.03 0 256s111.03 248 248 248 248-111.03 248-248S384.97 8 248 8zm82.29 357.6c-3.9 3.88-7.99 7.95-11.31 11.28-2.99 3-5.1 6.7-6.17 10.71-1.51 5.66-2.73 11.38-4.77 16.87l-17.39 46.85c-13.76 3-28 4.69-42.65 4.69v-27.38c1.69-12.62-7.64-36.26-22.63-51.25-6-6-9.37-14.14-9.37-22.63v-32.01c0-11.64-6.27-22.34-16.46-27.97-14.37-7.95-34.81-19.06-48.81-26.11-11.48-5.78-22.1-13.14-31.65-21.75l-.8-.72a114.792 114.792 0 0 1-18.06-20.74c-9.38-13.77-24.66-36.42-34.59-51.14 20.47-45.5 57.36-82.04 103.2-101.89l24.01 12.01C203.48 89.74 216 82.01 216 70.11v-11.3c7.99-1.29 16.12-2.11 24.39-2.42l28.3 28.3c6.25 6.25 6.25 16.38 0 22.63L264 112l-10.34 10.34c-3.12 3.12-3.12 8.19 0 11.31l4.69 4.69c3.12 3.12 3.12 8.19 0 11.31l-8 8a8.008 8.008 0 0 1-5.66 2.34h-8.99c-2.08 0-4.08.81-5.58 2.27l-9.92 9.65a8.008 8.008 0 0 0-1.58 9.31l15.59 31.19c2.66 5.32-1.21 11.58-7.15 11.58h-5.64c-1.93 0-3.79-.7-5.24-1.96l-9.28-8.06a16.017 16.017 0 0 0-15.55-3.1l-31.17 10.39a11.95 11.95 0 0 0-8.17 11.34c0 4.53 2.56 8.66 6.61 10.69l11.08 5.54c9.41 4.71 19.79 7.16 30.31 7.16s22.59 27.29 32 32h66.75c8.49 0 16.62 3.37 22.63 9.37l13.69 13.69a30.503 30.503 0 0 1 8.93 21.57 46.536 46.536 0 0 1-13.72 32.98zM417 274.25c-5.79-1.45-10.84-5-14.15-9.97l-17.98-26.97a23.97 23.97 0 0 1 0-26.62l19.59-29.38c2.32-3.47 5.5-6.29 9.24-8.15l12.98-6.49C440.2 193.59 448 223.87 448 256c0 8.67-.74 17.16-1.82 25.54L417 274.25z"
-              />
-            </svg>
-            <span class="font-medium">Nepal</span>
-          </div>
-          <div class="mb-12 lg:mb-0 text-center mx-auto">
-            <svg
-              class="w-8 h-8 text-blue-600 mb-6 mx-auto"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 384 512"
-            >
-              <path
-                fill="currentColor"
-                d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"
-              ></path>
-            </svg>
-            <span class="font-medium">Buddhanagar, Kathmandu</span>
-          </div>
-          <!-- <div class="mb-6 md:mb-0 text-center mx-auto">
-            <svg
-              class="w-8 h-8 text-blue-600 mb-6 mx-auto"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 512 512"
-            >
-              <path
-                fill="currentColor"
-                d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z"
-              ></path>
-            </svg>
-            <span class="font-medium">+977-9845536575</span>
-          </div> -->
-          <div class="text-center mx-auto">
-            <svg
-              class="w-8 h-8 text-blue-600 mb-6 mx-auto"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 576 512"
-            >
-              <path
-                fill="currentColor"
-                d="M552 64H88c-13.255 0-24 10.745-24 24v8H24c-13.255 0-24 10.745-24 24v272c0 30.928 25.072 56 56 56h472c26.51 0 48-21.49 48-48V88c0-13.255-10.745-24-24-24zM56 400a8 8 0 0 1-8-8V144h16v248a8 8 0 0 1-8 8zm236-16H140c-6.627 0-12-5.373-12-12v-8c0-6.627 5.373-12 12-12h152c6.627 0 12 5.373 12 12v8c0 6.627-5.373 12-12 12zm208 0H348c-6.627 0-12-5.373-12-12v-8c0-6.627 5.373-12 12-12h152c6.627 0 12 5.373 12 12v8c0 6.627-5.373 12-12 12zm-208-96H140c-6.627 0-12-5.373-12-12v-8c0-6.627 5.373-12 12-12h152c6.627 0 12 5.373 12 12v8c0 6.627-5.373 12-12 12zm208 0H348c-6.627 0-12-5.373-12-12v-8c0-6.627 5.373-12 12-12h152c6.627 0 12 5.373 12 12v8c0 6.627-5.373 12-12 12zm0-96H140c-6.627 0-12-5.373-12-12v-40c0-6.627 5.373-12 12-12h360c6.627 0 12 5.373 12 12v40c0 6.627-5.373 12-12 12z"
-              ></path>
-            </svg>
 
-            <span class="font-medium">greenimpactnepal@gmail.com</span>
+    <!-- Works Section -->
+    <section id="works" class="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+      <div class="container mx-auto px-6">
+        <h1 class="text-4xl lg:text-5xl font-bold mb-16 text-center text-gray-800 observe-animation">Our Works</h1>
+
+        <!-- Ongoing Projects -->
+        <div class="mb-20 observe-animation">
+          <h2 class="text-3xl font-bold mb-12 text-gray-700 flex items-center">
+            <span class="w-3 h-3 bg-green-500 rounded-full mr-4 animate-pulse"></span>
+            Ongoing Projects
+          </h2>
+          <div class="grid md:grid-cols-2 gap-8">
+            <!-- Urban Impact Study -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-500 transform hover:-translate-y-2 group">
+              <div class="p-8">
+                <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                  </svg>
+                </div>
+                <h3 class="text-xl font-bold mb-4 text-gray-800 group-hover:text-green-600 transition-colors duration-300">
+                  Urban Impact on Forest Fragmentation in Madhesh Province
+                </h3>
+                <p class="text-gray-600 mb-6 leading-relaxed line-clamp-3">
+                  Research project assessing urbanization's impact on forest fragmentation and wildlife habitat in Madhesh Province...
+                </p>
+                <a href="articles/urban-impact-study.html" class="inline-flex items-center text-green-600 font-semibold hover:text-green-700 transition-colors duration-300">
+                  Read More
+                  <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Human-Elephant Conflict -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-500 transform hover:-translate-y-2 group">
+              <div class="grid grid-cols-2 gap-4 p-6">
+                <img src="assets/elephant1.png" alt="elephant education" class="rounded-lg h-24 w-full object-cover" />
+                <img src="assets/elephant2.png" alt="elephant program" class="rounded-lg h-24 w-full object-cover" />
+              </div>
+              <div class="p-8 pt-4">
+                <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                  </svg>
+                </div>
+                <h3 class="text-xl font-bold mb-4 text-gray-800 group-hover:text-orange-600 transition-colors duration-300">
+                  Education Outreach on Human-Elephant Conflict
+                </h3>
+                <p class="text-gray-600 mb-6 leading-relaxed line-clamp-3">
+                  Collaborative program with municipalities to raise awareness about Human-Elephant Conflict and promote coexistence...
+                </p>
+                <a href="articles/elephant-conflict-program.html" class="inline-flex items-center text-orange-600 font-semibold hover:text-orange-700 transition-colors duration-300">
+                  Read More
+                  <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Completed Projects -->
+        <div class="observe-animation">
+          <h2 class="text-3xl font-bold mb-12 text-gray-700 flex items-center">
+            <span class="w-3 h-3 bg-blue-500 rounded-full mr-4"></span>
+            Completed Projects
+          </h2>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- R Basics Training -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-500 transform hover:-translate-y-2 group">
+              <div class="grid grid-cols-2 gap-2 p-4">
+                <img src="assets/rbasics1.png" alt="R training" class="rounded-lg h-20 w-full object-cover" />
+                <img src="assets/rbasics2.jpg" alt="R workshop" class="rounded-lg h-20 w-full object-cover" />
+              </div>
+              <div class="p-6">
+                <h3 class="text-lg font-bold mb-3 text-gray-800 group-hover:text-blue-600 transition-colors duration-300">
+                  R-Basics Training Program
+                </h3>
+                <p class="text-gray-600 text-sm mb-4 line-clamp-2">
+                  Week-long training program on R programming fundamentals and data analysis techniques...
+                </p>
+                <a href="articles/r-basics-training.html" class="inline-flex items-center text-blue-600 font-semibold hover:text-blue-700 transition-colors duration-300 text-sm">
+                  Learn More
+                  <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Disaster Risk Reduction -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-500 transform hover:-translate-y-2 group">
+              <div class="grid grid-cols-2 gap-2 p-4">
+                <img src="assets/drrtalk1.png" alt="disaster talk" class="rounded-lg h-20 w-full object-cover" />
+                <img src="assets/drrtalk2.png" alt="geo hazard" class="rounded-lg h-20 w-full object-cover" />
+              </div>
+              <div class="p-6">
+                <h3 class="text-lg font-bold mb-3 text-gray-800 group-hover:text-red-600 transition-colors duration-300">
+                  Geo-hazard & Disaster Risk Reduction Talk
+                </h3>
+                <p class="text-gray-600 text-sm mb-4 line-clamp-2">
+                  Virtual program on geo-hazard scenarios and disaster risk reduction strategies in Nepal...
+                </p>
+                <a href="articles/disaster-risk-talk.html" class="inline-flex items-center text-red-600 font-semibold hover:text-red-700 transition-colors duration-300 text-sm">
+                  Learn More
+                  <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Forest Fire -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-500 transform hover:-translate-y-2 group">
+              <div class="grid grid-cols-2 gap-2 p-4">
+                <img src="assets/forestFire1.png" alt="forest fire" class="rounded-lg h-20 w-full object-cover" />
+                <img src="assets/forestFire2.png" alt="fire management" class="rounded-lg h-20 w-full object-cover" />
+              </div>
+              <div class="p-6">
+                <h3 class="text-lg font-bold mb-3 text-gray-800 group-hover:text-orange-600 transition-colors duration-300">
+                  Forest Fire Management Program
+                </h3>
+                <p class="text-gray-600 text-sm mb-4 line-clamp-2">
+                  Collaborative virtual talk on current forest fire issues and management strategies...
+                </p>
+                <a href="articles/forest-fire-program.html" class="inline-flex items-center text-orange-600 font-semibold hover:text-orange-700 transition-colors duration-300 text-sm">
+                  Learn More
+                  <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Biodiversity Reels -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-500 transform hover:-translate-y-2 group">
+              <div class="grid grid-cols-2 gap-2 p-4">
+                <img src="assets/reels1.jpg" alt="biodiversity reel" class="rounded-lg h-20 w-full object-cover" />
+                <img src="assets/reels2.jpg" alt="awareness campaign" class="rounded-lg h-20 w-full object-cover" />
+              </div>
+              <div class="p-6">
+                <h3 class="text-lg font-bold mb-3 text-gray-800 group-hover:text-purple-600 transition-colors duration-300">
+                  Biodiversity Awareness Campaign
+                </h3>
+                <p class="text-gray-600 text-sm mb-4 line-clamp-2">
+                  International Biodiversity Day reel competition promoting environmental awareness...
+                </p>
+                <a href="articles/biodiversity-campaign.html" class="inline-flex items-center text-purple-600 font-semibold hover:text-purple-700 transition-colors duration-300 text-sm">
+                  Learn More
+                  <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Nature Hike -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-500 transform hover:-translate-y-2 group">
+              <div class="grid grid-cols-2 gap-2 p-4">
+                <img src="assets/hike2.jpg" alt="nature hike" class="rounded-lg h-20 w-full object-cover" />
+                <img src="assets/hike3.jpg" alt="marble dada" class="rounded-lg h-20 w-full object-cover" />
+              </div>
+              <div class="p-6">
+                <h3 class="text-lg font-bold mb-3 text-gray-800 group-hover:text-green-600 transition-colors duration-300">
+                  Eco-Hike to Marble Dada
+                </h3>
+                <p class="text-gray-600 text-sm mb-4 line-clamp-2">
+                  Educational eco-hike exploring environmental restoration and conservation efforts...
+                </p>
+                <a href="articles/nature-hike.html" class="inline-flex items-center text-green-600 font-semibold hover:text-green-700 transition-colors duration-300 text-sm">
+                  Learn More
+                  <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Environment Day -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-500 transform hover:-translate-y-2 group">
+              <div class="grid grid-cols-2 gap-2 p-4">
+                <img src="assets/wed1.jpg" alt="environment day" class="rounded-lg h-20 w-full object-cover" />
+                <img src="assets/wed2.jpg" alt="school program" class="rounded-lg h-20 w-full object-cover" />
+              </div>
+              <div class="p-6">
+                <h3 class="text-lg font-bold mb-3 text-gray-800 group-hover:text-emerald-600 transition-colors duration-300">
+                  World Environment Day Celebration
+                </h3>
+                <p class="text-gray-600 text-sm mb-4 line-clamp-2">
+                  School programs promoting environmental awareness and restoration efforts...
+                </p>
+                <a href="articles/environment-day.html" class="inline-flex items-center text-emerald-600 font-semibold hover:text-emerald-700 transition-colors duration-300 text-sm">
+                  Learn More
+                  <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Research Writing -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-500 transform hover:-translate-y-2 group">
+              <div class="grid grid-cols-2 gap-2 p-4">
+                <img src="assets/reportwriting1.png" alt="research workshop" class="rounded-lg h-20 w-full object-cover" />
+                <img src="assets/reportwriting2.png" alt="writing skills" class="rounded-lg h-20 w-full object-cover" />
+              </div>
+              <div class="p-6">
+                <h3 class="text-lg font-bold mb-3 text-gray-800 group-hover:text-indigo-600 transition-colors duration-300">
+                  Research Report Writing Workshop
+                </h3>
+                <p class="text-gray-600 text-sm mb-4 line-clamp-2">
+                  Academic writing workshop for students and researchers in environmental fields...
+                </p>
+                <a href="articles/research-writing-workshop.html" class="inline-flex items-center text-indigo-600 font-semibold hover:text-indigo-700 transition-colors duration-300 text-sm">
+                  Learn More
+                  <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
-    <dialog id="modal" class="p-8">
-      <button class="btn" onclick="closeModal()">Close</button>
-      <div class="modal-body"></div>
-    </dialog>
-    <script>
-      const openButton = document.querySelector(".btn");
-      const modalBody = document.querySelector(".modal-body");
-      const modal = document.querySelector("#modal");
-      function openModal(content) {
-        modalBody.innerHTML = content.map((item) => `<p>${item}</p>`).join("");
-        modal.showModal();
-      }
-      function closeModal() {
-        modal.close();
-      }
-    </script>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white observe-animation">
+      <div class="container mx-auto px-6">
+        <h1 class="text-4xl lg:text-5xl font-bold mb-16 text-center text-gray-800">Get In Touch</h1>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div class="rounded-2xl overflow-hidden shadow-card">
+            <iframe
+              title="map"
+              src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3533.0668712827196!2d85.33197299999999!3d27.684327999999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjfCsDQxJzAzLjYiTiA4NcKwMTknNTUuMSJF!5e0!3m2!1sen!2snp!4v1721717074427!5m2!1sen!2snp"
+              width="100%"
+              height="400"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+          <div class="space-y-8">
+            <div class="flex items-center space-x-4 p-6 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors duration-300">
+              <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-semibold text-gray-800">Location</h3>
+                <p class="text-gray-600">Buddhanagar, Kathmandu, Nepal</p>
+              </div>
+            </div>
+            <div class="flex items-center space-x-4 p-6 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors duration-300">
+              <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-semibold text-gray-800">Email</h3>
+                <p class="text-gray-600">greenimpactnepal@gmail.com</p>
+              </div>
+            </div>
+            <div class="flex items-center space-x-4 p-6 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors duration-300">
+              <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
+                <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-semibold text-gray-800">Country</h3>
+                <p class="text-gray-600">Nepal</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+      <div class="container mx-auto px-6 text-center">
+        <p class="text-gray-400">&copy; 2024 Green Impact Nepal. All rights reserved.</p>
+      </div>
+    </footer>
   </body>
 </html>
