@@ -1,4 +1,4 @@
-# Website for prasiddha foundation
+# Website for Green Impact Nepal
 
 ## For css
 
